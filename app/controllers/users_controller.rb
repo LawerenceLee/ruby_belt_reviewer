@@ -5,9 +5,11 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.state = params[:state]
 
     if @user.save
-      redirect_to :events
+      falsh[:notice] = "Successful registration, Please Sign In"
+      redirect_to "/"
     else
       flash[:errors] = @user.errors.full_messages
       redirect_to '/'

@@ -25,7 +25,9 @@
   <% end %>
 <% end %>
 
-<%= link_to  "Logout", "/sessions/logout" %>
+<% if current_user != nil %>
+  <%= link_to  "Logout", "/sessions/logout" %>
+<% end %>
 
 <%= yield %>
 
