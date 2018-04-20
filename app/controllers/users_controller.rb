@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     @user.state = params[:state]
 
     if @user.save
-      falsh[:notice] = "Successful registration, Please Sign In"
+      flash[:notice] = "Successful registration, Please Sign In"
       redirect_to "/"
     else
       flash[:errors] = @user.errors.full_messages
